@@ -9,11 +9,6 @@ const app = express();
 // Serve static files from the React frontedn app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-// All other routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'));
-});
-
 // Serve root
 app.get('/', cors(), (req, res) => {
   res.send('Ready!');
@@ -38,6 +33,11 @@ app.get('/api/cow', cors(), async(req, res, next) => {
   } catch (err) {
     next(err);
   }
+});
+
+// All other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
 // Initialize server

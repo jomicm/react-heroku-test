@@ -35,7 +35,7 @@ const App = () => {
   }, []);
   return (
     <div className='App'>
-      <h3>Text Cow. Moo</h3>
+      <h3>Mick's version of Cow > Moo!</h3>
       <code>{cow}</code>
       <form onSubmit={customCow}>
         <label>Custom Cow Text:</label>
